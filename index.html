@@ -65,8 +65,8 @@ function svgToPng() {
 }
 
 var width = $(window).width(),//1200,
-    height = $(window).height()-2,
-    outerRadius = Math.min(width, height) / 2 - 190,
+    height = $(window).height()-20,
+    outerRadius = Math.min(width, height) / 2 - 200,
     innerRadius = outerRadius - 28;
 
 var formatPercent = d3.format(".3f");
@@ -380,6 +380,11 @@ svg.append("circle")
 
 </script>
 
-
+<div id="foot" <ul class="footer" style = "margin: -70px 0 0 0;margin-left: 500px; border-top: 0px dotted #aaa; padding: 0.5px 0 0 0;  text-align: right;  clear: both;">
+        <li style="display: inline-block; font-size: small;"><a href='https://kvl.kaust.edu.sa/Pages/Home.aspx'>Created By KAUST Visualization Core Lab, July 2017</a></li>
+        <!-- <li style="display: inline-block;"><aside style ="margin-top: -15px;"> June, 2017.
+        <a href="#" rel="author">Sohaib Ghani</a> </aside></li> -->
+        </ul>             
+</div>
 
 </body>

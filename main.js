@@ -106,11 +106,11 @@ function generatechord(matrix1){
       var temp=1;
       if(matrix2[d.source.index][d.target.index] < 0) temp=-1;
       return cities[d.source.index].name
-          + " → " + cities[d.target.index].name
-          + ": " + formatPercent(d.source.value*temp)
-          + "\n" + cities[d.target.index].name
-          + " → " + cities[d.source.index].name
-          + ": " + formatPercent(d.target.value*temp);
+          + " <-> " + cities[d.target.index].name
+          + ": " + formatPercent(d.source.value*temp);
+          // + "\n" + cities[d.target.index].name
+          // + " → " + cities[d.source.index].name
+          // + ": " + formatPercent(d.target.value*temp);
     });
 
    function mouseover(d, i) {
@@ -186,12 +186,12 @@ function generatechord(matrix1){
 var teams = [
   "Global Solutions " ,
   "Local Solutions",
-  "Ecosystem Components ",  "Climate Drivers","",
-  "Chord Value= 5",
-  "Chord Value= 4 - 4.99",
-  "Chord Value= 3 - 3.99",
-  "Chord Value= 2 - 2.99",
-  "Chord Value= 1 - 1.99"];
+  "Ecosystems and services",  "Climate Drivers","",
+  "Effectiveness = 5",
+  "Effectiveness = 4 - 4.99",
+  "Effectiveness = 3 - 3.99",
+  "Effectiveness = 2 - 2.99",
+  "Effectiveness = 1 - 1.99"];
 
 var colors = [ "#DF7C00", "#BFAE40", "#8bc48a", "#DB7093", "white", "red","rgba(0,0,255,0.75)","#696969","cyan", "purple"];  //#083E77 bluish
 

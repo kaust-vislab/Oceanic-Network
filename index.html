@@ -3,7 +3,7 @@
 <title>Oceanic Chord Diagram</title>
 <style>
 
-@import url(style.css);
+/*@import url(style.css);*/
 
 #circle circle {
   fill: none;
@@ -27,23 +27,54 @@ path.chord {
   display: none;
 }
 
+#footer {
+      /*position: absolute;*/
+      top: 0;
+      z-index: 1;
+      display: block;
+      font-size: 24px;
+      font-weight: 300;
+      text-shadow: 0 1px 0 #fff;
+      top: 30px;
+      left: 30px;
+      text-align: center;
+    }
+
+    .hint {
+      /*position: absolute;*/
+      left: 0;
+      /*width: 500px;*/
+      margin-top: 5px;
+      font-size: 13.5px;
+      color: #121111;
+    }    
+
 </style>
 
 <!-- <p>Built with <a href="http://d3js.org/">d3.js</a>. -->
 <body>
 
-<div style="text-align:center">
+
+
+<div style="text-align:center"  id="footer" >
+        Interactive Oceanic Network
+    <div style="text-align:center"  class="hint">
+      <span>Interactive network diagram showing the effectiveness to reduce the effects of climate change on key marine ecosystems and ecosystem services. The effectivenesses shown are: the effectiveness of each climate solution to moderate warming, acidification, sea level rise and the effectiveness of each solution to reduce the combined effect of ocean warming, ocean acidification and sea-level rise on key ecosystems and ecosystems services. The thickness of the boxes around the solutions represents the combined scores for readiness and lead time until full implementation of each of the solutions. Scores range from 1 to 5: very low, low, moderate, high, and very high.  Placing the cursor on a link highlights its values.<span/>
+      <!-- <span>Mouse over a brand to highlight</span> -->
+    </div>
+</div>
+
+<div style="text-align:center; position:relative;">
 <!-- <button type="button"  id='taxa' onclick="updatewarming()"  style= "background-color: hsl(119, 33%, 65%); border-color: rgba(5, 12, 7, 0.5); border-width: 3px;">Warming</button>
 <button type="button"  id='trophical' onclick="updatesealevel()" style= "background-color: hsl(119, 33%, 65%);border-color: hsl(119, 33%, 65%); border-width: 3px;" >Sea Level</button>
 <button type="button"  id='acid' onclick="updateacid()"  style= "background-color: hsl(119, 33%, 65%); border-color: hsl(119, 33%, 65%);  border-width: 3px;">Acidification</button>
 <button type="button"  id='cm' onclick="updatecm()"  style= "background-color: hsl(119, 33%, 65%); border-color: hsl(119, 33%, 65%);  border-width: 3px;">All 3 Combine</button> -->
-<button id='saveButton' style=" border: 1px solid; border-color: #245580;border-radius: 4px; font-size: 12px;height: 30px;" onclick="svgToPng()">Export Vis to PNG</button>
+<button id='saveButton' style="margin-top: 20px;     margin-left: -60px; position: absolute; border: 1px solid; border-color: #245580;border-radius: 4px; font-size: 12px;height: 30px;" onclick="svgToPng()">Export Vis to PNG</button>
 <!--  <br>
 <button type="button"  id='all' onclick="allchords()" style= "background-color: #ccc ;border-color: #333; border-width: 3px;" >Show All Chords </button>
 <button type="button"  id='pos' onclick="positivechords()" style= "background-color: hsl(119, 33%, 65%) ;border-color: #8bc48a ; border-width: 3px;" >Show Only Positive</button>
 <button type="button"  id='neg' onclick="negativechords()" style= "background-color:  hsl(1, 97%, 77%);border-color: #fd8b8a; border-width: 3px;" >Show Only Negative</button> -->
 </div>
-
 
 <script src="https://d3js.org/d3.v2.min.js?2.8.1"></script>
 <script src="https://rawgit.com/exupero/saveSvgAsPng/gh-pages/saveSvgAsPng.js"></script>
@@ -64,8 +95,8 @@ function svgToPng() {
             saveSvgAsPng(d3.select('svg').node(), 'vis.png');
 }
 
-var width = $(window).width(),//1200,
-    height = $(window).height()-20,
+var width = $(window).width()-30,//1200,
+    height = $(window).height()-30,
     outerRadius = Math.min(width, height) / 2 - 200,
     innerRadius = outerRadius - 28;
 
@@ -88,7 +119,7 @@ var svg = d3.select("body").append("svg")
     .attr("height", height)
     .append("g")
     .attr("id", "circle")
-    .attr("transform", "translate(" + width / 4 + "," + height / 2 + ")");
+    .attr("transform", "translate(" + width / 2 + "," + height / 2 + ")");
 
 svg.append("circle")
     .attr("r", outerRadius);
@@ -380,8 +411,8 @@ svg.append("circle")
 
 </script>
 
-<div id="foot" <ul class="footer" style = "margin: -70px 0 0 0;margin-left: 500px; border-top: 0px dotted #aaa; padding: 0.5px 0 0 0;  text-align: right;  clear: both;">
-        <li style="display: inline-block; font-size: small;"><a href='https://kvl.kaust.edu.sa/Pages/Home.aspx'>Created By KAUST Visualization Core Lab, July 2017</a></li>
+<div id="foot2" <ul class="footer2" style = "margin: -80px 30px 0 0;border-top: 0px dotted #aaa; padding: 0.5px 0 0 0;  text-align: right;  clear: both;">
+        <li style="display: inline-block; font-size: small;"><a href='https://kvl.kaust.edu.sa/Pages/Home.aspx'>Created By KAUST Visualization Core Lab, August 2017</a></li>
         <!-- <li style="display: inline-block;"><aside style ="margin-top: -15px;"> June, 2017.
         <a href="#" rel="author">Sohaib Ghani</a> </aside></li> -->
         </ul>             

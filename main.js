@@ -200,7 +200,7 @@ var color = d3.scale.ordinal()      //custom color scale for teams
                 .domain(teams);
 svg.append("rect")   
 .attr("x",((width/4)))
-.attr("y",-height/2)
+.attr("y",-height/3)
 .attr("width",180)
 .attr("height",210)
 .attr("style","fill-opacity:0;stroke:black;stroke-width:1.5px");
@@ -209,7 +209,7 @@ var legend = svg.append("g")
     .attr("class", "legend")
     .attr("width", 150)
     .attr("height", 150)
-    .attr("transform", "translate("+ ((width/4)+5) + ",-"+ ((height/2)-10) +" )");
+    .attr("transform", "translate("+ ((width/4)+5) + ",-"+ ((height/3)-10) +" )");
 
 var gs = legend.selectAll("g.keybox")
           .data(teams).enter().append("g")
